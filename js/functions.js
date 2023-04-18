@@ -88,8 +88,8 @@ function calculateTip(totalBill, percentage) {
  * then display the dollar amount they should tip
  */
 
-let totalAmount = prompt("How much is the total bill?");
-let tipPercentage = prompt("What percentage would you like to tip? ex.(20)");
+let totalAmount = parseFloat(prompt("How much is the total bill?"));
+let tipPercentage = parseFloat(prompt("What percentage would you like to tip? ex.(20)"));
 
 alert("The tip should be $" + calculateTip(totalAmount, tipPercentage));
 
@@ -111,7 +111,7 @@ alert("The tip should be $" + calculateTip(totalAmount, tipPercentage));
 function applyDiscount(price, discountPercentage) {
     return price - (price * discountPercentage).toFixed(2);
 }
-let totalPrice = prompt("What is the total price?");
-let discount = prompt("What is the discount percentage?");
+let totalPrice = parseFloat(prompt("What is the total price?"));
+let discount = parseFloat(prompt("What is the discount percentage?"));
 
 alert("The total price with the discount is " + applyDiscount(totalPrice, discount));
