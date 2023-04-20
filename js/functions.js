@@ -1,5 +1,5 @@
 "use strict";
-
+(function(){
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -58,8 +58,7 @@ var random = Math.floor((Math.random() * 3) + 1);
 
 console.log(random);
 function isTwo(random) {
-    let landedOnTwo = random === 2;
-    return landedOnTwo;
+    return random === 2;
 }
 
 console.log(isTwo(random));
@@ -115,3 +114,4 @@ let totalPrice = parseFloat(prompt("What is the total price?"));
 let discount = parseFloat(prompt("What is the discount percentage?"));
 
 alert("The total price with the discount is " + applyDiscount(totalPrice, discount));
+})();

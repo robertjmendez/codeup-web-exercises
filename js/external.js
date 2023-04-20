@@ -1,4 +1,5 @@
 "use strict"
+
 console.log("Hello from external JavaScript");
 
 let usersFavColor = prompt("What is your favorite color?");
