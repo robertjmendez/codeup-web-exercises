@@ -40,8 +40,8 @@ let customersOrder;
 do {
     customersOrder = Math.floor(Math.random() * 5) + 1;
     if (customersOrder <= allCones) {
-        console.log(customersOrder + " cones sold");
         allCones -= customersOrder;
+        console.log(customersOrder + " cones sold: " + allCones + " left");
     }
     else {
         console.log("I cannot sell you " + customersOrder + " I only have " + allCones);
