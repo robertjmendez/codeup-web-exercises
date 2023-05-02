@@ -1,13 +1,16 @@
 (function () {
     "use strict";
     // 04/27/2023 (Thursday) ------------------------------------
+
     function returnSeven() {
         return 7;
     }
 
     console.log(returnSeven());
+    console.log("--------------------------")
 
     // 05/01/2023 (Monday) --------------------------------------
+
     function findFactors(num) {
         if (typeof num !== "number") {
             return false;
@@ -31,7 +34,35 @@
     console.log(findFactors({value: 64})); // returns false;
     console.log(findFactors()); // returns false;
 
+    console.log("--------------------------")
+
     // 05/02/2023 (Tuesday) --------------------------------------
+
+    function countEs(string) {
+        if (typeof string !== "string") {
+            return false;
+        }
+
+        let count = 0;
+        for (let i = 0; i < string.length; i++) {
+            if (string[i].toLowerCase() === "e") {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    console.log(countEs("Ease")); // returns 2;
+    console.log(countEs("teleconference")); // returns 5;
+    console.log(countEs("TOM")); // returns 0;
+    console.log(countEs(true)); // returns false;
+    console.log(countEs(['e', 'E'])); // returns false;
+    console.log(countEs()); // returns false;
+
+    console.log("--------------------------")
+
+    // 05/03/2023 (Wednesday) --------------------------------------
+
 
 })();
 
