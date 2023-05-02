@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register With Us</title>
+    </head>
+    <body>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="Email">
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+            <br>
+
+            <label for="bio">Bio:</label>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
+            <br>
+
+            <label>How did you hear about us?</label>
+            <br>
+            <!-- Allows one of the values should be allowed to be selected at a time -->
+            <!--      <label for="billboard">Billboard</label>-->
+            <!--      <input type="radio" name="hear-about-us" id="billboard">-->
+
+            <!--      <label for="radio-advertisement">Radio Advertisement</label>-->
+            <!--      <input type="radio" name="hear-about-us" id="radio-advertisement">-->
+
+            <!--      <label for="internet-advertisement">Internet Advertisement</label>-->
+            <!--      <input type="radio" name="hear-about-us" id="internet-advertisement">-->
+
+            <!--      <label for="other">Other</label>-->
+            <!--      <input type="radio" name="hear-about-us" id="other">-->
+
+            <!-- Chose to use checkboxes instead of radio buttons to select multiple options -->
+            <label for="billboard">Billboard</label>
+            <input type="checkbox" name="billboard" id="billboard">
+
+            <label for="radio-advertisement">Radio Advertisement</label>
+            <input type="checkbox" name="radio-advertisement" id="radio-advertisement">
+
+            <label for="internet-advertisement">Internet Advertisement</label>
+            <input type="checkbox" name="internet-advertisement" id="internet-advertisement">
+
+            <label for="other">Other</label>
+            <input type="checkbox" name="other" id="other">
+            <br>
+
+            <label for="web-browser">Select the web browser you are currently using</label>
+            <select name="web-browser" id="web-browser">
+                <option value="Chrome">Chrome</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Safari">Safari</option>
+                <option value="Internet Explorer">Internet Explorer</option>
+            </select>
+            <br>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
