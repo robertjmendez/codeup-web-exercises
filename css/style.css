@@ -1,4 +1,86 @@
+#container {
+    margin: 0 auto;
+    max-width: 900px;
+    opacity: 0.8;
+    padding: 20px;
+    background-color: mintcream;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url('../img/welcome_background.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+}
+
 .fancy-header {
-    color: purple; /* single line comment */
+    text-align: center;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    color: #1f8293;
+}
+
+#slogan {
+    text-align: center;
+}
+
+.image {
+    width: 45%;
+    height: auto;
+    padding: 2px;
+}
+
+#image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: square;
+}
+
+tr {
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 16px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+a {
+    color: darkcyan;
     text-decoration: underline;
 }
+
+a:visited {
+    color: mediumpurple;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+a:active {
+    color: green;
+    text-decoration: none;
+}
+
+
+
