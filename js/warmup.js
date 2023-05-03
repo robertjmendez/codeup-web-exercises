@@ -7,7 +7,7 @@
     }
 
     console.log(returnSeven());
-    console.log("--------------------------")
+    console.log("--------------------------");
 
     // 05/01/2023 (Monday) --------------------------------------
 
@@ -34,7 +34,7 @@
     console.log(findFactors({value: 64})); // returns false;
     console.log(findFactors()); // returns false;
 
-    console.log("--------------------------")
+    console.log("--------------------------");
 
     // 05/02/2023 (Tuesday) --------------------------------------
 
@@ -59,10 +59,37 @@
     console.log(countEs(['e', 'E'])); // returns false;
     console.log(countEs()); // returns false;
 
-    console.log("--------------------------")
+    console.log("--------------------------");
 
     // 05/03/2023 (Wednesday) --------------------------------------
 
+    function containsE(string) {
+        if (typeof string !== "string") {
+            return false;
+        }
+        // one way to do it with less code
+        return string.toLowerCase().includes('e');
+
+        // Another way to do it without changing much code from the previous exercise
+        // let count = 0;
+        // for (let i = 0; i < string.length; i++) {
+        //     if (string[i].toLowerCase() === "e") {
+        //         count++
+        //     }
+        // }
+        // return count >= 1;
+    }
+
+    console.log(containsE("Ease")); // returns true;
+    console.log(containsE("teleconference")); // returns true;
+    console.log(containsE("TOM")); // returns False;
+    console.log(containsE(true)); // returns false;
+    console.log(containsE(['e', 'E'])); // returns false;
+    console.log(containsE()); // returns false;
+
+    console.log("--------------------------");
+
+    // 05/04/2023 (Thursday) --------------------------------------
 
 })();
 
