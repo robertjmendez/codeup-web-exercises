@@ -18,10 +18,11 @@ body, html {
 }
 
 .message {
-    margin: 10px;
+    margin: 0.625em;
+    width: 100%;
     border: 1px solid lightgray;
     border-radius: 5px;
-    padding: 10px;
+    padding: 0.625em;
 }
 
 .message-info {
