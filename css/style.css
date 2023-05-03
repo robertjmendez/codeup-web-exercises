@@ -85,9 +85,17 @@ table {
     font-size: 20px;
 }
 
-th, td {
+th {
+    font-weight: bold;
     border: 1px solid white;
     padding: 5px;
+    font-size: 24px;
+}
+
+td {
+    border: 1px solid white;
+    padding: 5px;
+    font-size: 16px;
 }
 
 a {
