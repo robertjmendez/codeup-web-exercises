@@ -91,5 +91,30 @@
 
     // 05/04/2023 (Thursday) --------------------------------------
 
+    function fizzBuzz() {
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("fizzBuzz");
+                continue;
+            }
+           else if (i % 3 === 0) {
+                console.log("fizz");
+                continue;
+            }
+            else if (i % 5 === 0) {
+                console.log("buzz");
+                continue;
+            }
+
+            console.log(i);
+        }
+    }
+
+    fizzBuzz();
+
+    console.log("--------------------------");
+
+    // 05/05/2023 (Friday) --------------------------------------
+
 })();
 
