@@ -152,5 +152,41 @@
 
     console.log("--------------------------");
 
+    // 05/11/2023 (Thursday) --------------------------------------
+
+    function isEven(string) {
+        if (string.length % 2 === 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function explainString(string) {
+        let number = countEs(string);
+        let even = isEven(string);
+
+        return {
+            string: string,
+            numberOfEs: number,
+            isEvenLength: even
+        }
+    }
+
+    console.log(explainString("cheese")); // returns {string: "cheese", numberOfEs: 3, isEvenLength: true}
+    console.log(explainString("dog")); // returns {string: "dog", numberOfEs: 0, isEvenLength: false}
+
+
+    console.log("--------------------------");
+
+
+    // 05/12/2023 (Friday) --------------------------------------
+
+
+
+
+
+
 })();
 
