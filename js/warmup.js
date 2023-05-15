@@ -229,6 +229,22 @@
     console.log("--------------------------");
 
 
+    // 05/15/2023 (Monday) --------------------------------------
+    function getTallest(arr) {
+        let tallest = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i].heightInMM > tallest.heightInMM) {
+                tallest = arr[i];
+            }
+        }
+        return tallest;
+    }
 
+    console.log(getTallest(hamsters)); // returns {name: "Boss", heightInMM: 120, fur: ['brown', 'white'], gender: "male", dateOfBirth: "September 21"}
+
+    console.log("--------------------------");
+
+
+    // 05/16/2023 (Tuesday) --------------------------------------
 })();
 
