@@ -24,40 +24,69 @@
             culpa qui officia deserunt mollit anim id est laborum.
         </p>
 
+        <button id="button-1">Button 1</button>
+        <button id="button-2">Button 2</button>
+        <button id="button-3">Button 3</button>
+        <button id="button-4">Button 4</button>
 
         <script>
             (function() {
                 "use strict";
+
+                // PART ONE OF EXERCISE---------------------------------------------------
                 // TODO: Uncomment next line and get the main header element by id
-                var mainHeader = document.getElementById('main-header');
+                // var mainHeader = document.getElementById('main-header');
 
                 // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-                mainHeader.innerHTML = "JavaScript is Cool";
+                // mainHeader.innerHTML = "JavaScript is Cool";
 
                 // TODO: Uncomment the next line and get the sub header element by id
-                var subHeader = document.getElementById('sub-header');
+                // var subHeader = document.getElementById('sub-header');
 
                 // TODO: Set the text color of subHeader to blue
-                subHeader.style.color = 'blue';
+                // subHeader.style.color = 'blue';
 
                 // TODO: Uncomment the next line and get all list items
-                var listItems = document.getElementsByTagName('li');
+                // var listItems = document.getElementsByTagName('li');
 
                 // TODO: Set text color on every other list item to grey
-                for (var i = 0; i < listItems.length; i++) {
-                    listItems[i].style.color = 'grey';
-                }
+                // for (var i = 0; i < listItems.length; i++) {
+                //     listItems[i].style.color = 'grey';
+                // }
                 
                 // TODO: Set text color of li with dbid = 1 to blue
-                listItems[0].style.color = 'blue';
+                // listItems[0].style.color = 'blue';
 
                 // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-                var subParagraphs = document.getElementsByClassName('sub-paragraph');
+                // var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
                 // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-                for (let i = 0; i < subParagraphs.length; i++) {
-                    subParagraphs[i].innerHTML = 'Mission Accomplished!'
-                }
+                // subParagraphs[0].innerHTML = "Mission Accomplished!";
+
+
+                // PART TWO OF EXERCISE---------------------------------------------------
+                document.getElementById('button-1').addEventListener('click', function () {
+                    var mainHeader = document.getElementById('main-header');
+                    mainHeader.innerHTML = "JavaScript is Cool";
+                });
+
+                document.getElementById('button-2').addEventListener('click', function () {
+                    var subHeader = document.getElementById('sub-header');
+                    subHeader.style.color = 'blue';
+                });
+
+                document.getElementById('button-3').addEventListener('click', function () {
+                    var listItems = document.getElementsByTagName('li');
+                    for (var i = 0; i < listItems.length; i++) {
+                        listItems[i].style.color = 'grey';
+                    }
+                    listItems[0].style.color = 'blue';
+                });
+
+                document.getElementById('button-4').addEventListener('click', function () {
+                    var subParagraphs = document.getElementsByClassName('sub-paragraph');
+                    subParagraphs[0].innerHTML = "Mission Accomplished!";
+                });
             })();
         </script>
     </body>
