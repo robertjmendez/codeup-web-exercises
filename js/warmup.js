@@ -246,5 +246,21 @@
 
 
     // 05/16/2023 (Tuesday) --------------------------------------
+
+    function singleFurColor(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].fur.length === 1) {
+                newArr.push(arr[i])
+            }
+        }
+        return newArr;
+    }
+
+    console.log(singleFurColor(hamsters)); // returns [{name: "Bijou", heightInMM: 75, fur: ['white'], gender: "female", dateOfBirth: "July 10"}];
+
+    console.log("--------------------------");
+
+    // 05/17/2023 (Wednesday) --------------------------------------
 })();
 
