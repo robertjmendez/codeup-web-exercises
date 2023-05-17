@@ -262,5 +262,21 @@
     console.log("--------------------------");
 
     // 05/17/2023 (Wednesday) --------------------------------------
+
+    function mostColorful(arr) {
+        let mostColorful = arr[0]
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].fur.length > mostColorful.fur.length) {
+                mostColorful = arr[i];
+            }
+        }
+        return mostColorful;
+    }
+
+    console.log(mostColorful(hamsters)); // returns {name: "Snoozer", heightInMM: 85, fur: ['brown', 'white', "pink"], gender: "male", dateOfBirth: "January 14"};
+
+    console.log("--------------------------");
+
+    // 05/18/2023 (Thursday) --------------------------------------
 })();
 
