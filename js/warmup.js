@@ -278,5 +278,30 @@
     console.log("--------------------------");
 
     // 05/18/2023 (Thursday) --------------------------------------
+
+    function describeNumber(num) {
+        let evnOrOdd = (num % 2 === 0) ? 'even' : 'odd';
+        let numDigits = num.toString().length;
+        let factor = [];
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) {
+                factor.push(i);
+            }
+        }
+        return {
+            number: num,
+            evenOrOdd: evnOrOdd,
+            factors: factor,
+            numberOfDigits: numDigits
+        }
+    }
+
+    console.log(describeNumber(19)); // returns {number: 19, evenOrOdd: "odd", factors: [1,19], numberOfDigits: 2};
+    console.log(describeNumber(2)); // returns {number: 2, evenOrOdd: "even", factors: [1,2], numberOfDigits: 1};
+
+    console.log("--------------------------");
+
+    // 05/19/2023 (Friday) --------------------------------------
+
 })();
 
