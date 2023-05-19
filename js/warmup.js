@@ -303,5 +303,21 @@
 
     // 05/19/2023 (Friday) --------------------------------------
 
+    function multiplyElementsByThree(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            newArr.push(arr[i] * 3);
+        }
+        return newArr;
+    }
+
+    console.log(multiplyElementsByThree([3,4,5])); // returns [9, 12, 15];
+    console.log(multiplyElementsByThree([12,8])); // returns [36, 24];
+    console.log(multiplyElementsByThree([100])); // returns [300];
+    console.log(multiplyElementsByThree([15, 9, 33, 16, 50])); // returns [45, 27, 99, 48, 150];
+
+    console.log("--------------------------");
+
+    // 05/22/2023 (Monday) --------------------------------------
 })();
 
