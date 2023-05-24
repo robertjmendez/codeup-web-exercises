@@ -18,14 +18,25 @@ $(document).on("keyup", function(event){
     if (userEntry.join() === konamiCode.join()) {
         codeEntered = true;
         $('h1').text('Immortality Unlocked!');
-        let newParagraph = $("<p>You have added 30 lives!</p>");
-        newParagraph.addClass("lives-added");
-        $('.screen').append(newParagraph);
+        $('.screen').text('You have added 30 lives!');
         $('body').addClass('gradient-animate');
+        $('.off-button').click(resetGame);
     }
 });
 
-$(document).keydown(function(event) {
+    function resetGame() {
+        userEntry = [];
+        codeEntered = false;
+        $('h1').text('Unlock Immortality!');
+        $('.screen').text('Game Over');
+        $('body').removeClass('gradient-animate');
+        $('.button').removeClass('lit');
+        $('.off-button').off('click');
+    }
+
+
+
+    $(document).keydown(function(event) {
     switch(event.key) {
         case 'ArrowUp':
             // light up the Up button
