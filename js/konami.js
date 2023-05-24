@@ -11,7 +11,11 @@ $(document).on("keyup", function(event){
     }
 
     if (userEntry.join() === konamiCode.join()) {
-        alert("You have added 30 lives!");
+        $('h1').text('Immortality Unlocked!');
+        let newParagraph = $("<p>You have added 30 lives!</p>");
+        newParagraph.addClass("lives-added");
+        $('.screen').append(newParagraph);
+        $('body').addClass('gradient-animate');
     }
 });
 

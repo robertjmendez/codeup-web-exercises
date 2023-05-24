@@ -1,5 +1,13 @@
 body {
     background-color: black;
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    font-size: 60px;
+    background: -webkit-linear-gradient(#8b0000, #FF4500, #FF1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .image {
@@ -21,7 +29,7 @@ body {
 .oval-button {
     position: absolute;
     border-radius: 30%;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 #up-button {
@@ -81,3 +89,39 @@ body {
 .lit {
     background-color: red;
 }
+
+.lives-added {
+    font-family: 'Press Start 2P', cursive;
+    font-size: .9em;
+    color: black;
+
+}
+
+.screen {
+    position: absolute;
+    top: 86px;
+    left: 628px;
+    height: 175px;
+    width: 194px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.gradient-animate {
+    background: linear-gradient(269deg, #000022, #400000, #220040);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+
+
