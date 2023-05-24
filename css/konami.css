@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+}
+
+.image {
+    position: relative;
+}
+
+.square-button {
+    position: absolute;
+    border-radius: 20%;
+    opacity: 0.7;
+}
+
+.round-button {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.oval-button {
+    position: absolute;
+    border-radius: 30%;
+    opacity: 0.7;
+}
+
+#up-button {
+    top: 365px;
+    left: 607px;
+    width: 28px;
+    height: 30px;
+
+}
+
+#left-button {
+    top: 393px;
+    left: 578px;
+    width: 28px;
+    height: 30px;
+
+}
+
+#down-button {
+    top: 422px;
+    left: 607px;
+    width: 28px;
+    height: 30px;
+
+}
+
+#right-button {
+    top: 393px;
+    left: 634px;
+    width: 28px;
+    height: 30px;
+}
+
+#b-button {
+    top: 395px;
+    left: 773px;
+    width: 45px;
+    height: 45px;
+
+}
+
+#a-button {
+    top: 367px;
+    left: 831px;
+    width: 45px;
+    height: 45px;
+}
+
+#enter-button {
+    top: 485px;
+    left: 716px;
+    width: 43px;
+    height: 13px;
+    transform: rotate(154deg);
+}
+
+.lit {
+    background-color: red;
+}
