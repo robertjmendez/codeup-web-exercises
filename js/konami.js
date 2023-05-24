@@ -1,5 +1,6 @@
 "use strict";
 
+$(function(){
 let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
 let userEntry = [];
 let codeEntered = false;
@@ -88,6 +89,8 @@ $(document).keyup(function(event) {
             $('#enter-button').removeClass('lit');
             break;
     }
+});
+
 });
 
 
