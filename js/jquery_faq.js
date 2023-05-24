@@ -1,7 +1,6 @@
 $(function (){
     // Exercise 1
     $('#toggle-link').click(function (event) {
-        event.preventDefault();
         $('dd').toggleClass('invisible');
     });
 
