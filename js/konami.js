@@ -2,8 +2,12 @@
 
 let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
 let userEntry = [];
+let codeEntered = false;
 
 $(document).on("keyup", function(event){
+    if (codeEntered) {
+        return;
+    }
     userEntry.push(event.key);
 
     if (userEntry.length > konamiCode.length) {
@@ -11,6 +15,7 @@ $(document).on("keyup", function(event){
     }
 
     if (userEntry.join() === konamiCode.join()) {
+        codeEntered = true;
         $('h1').text('Immortality Unlocked!');
         let newParagraph = $("<p>You have added 30 lives!</p>");
         newParagraph.addClass("lives-added");
