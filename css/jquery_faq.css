@@ -1,0 +1,19 @@
+.invisible {
+    visibility: hidden;
+}
+
+.highlighted {
+    background-color: #FF0;
+}
+
+dt, p {
+    font-weight: bold;
+}
+
+dd {
+    font-size: 0.9rem;
+}
+
+dd {
+    margin-bottom: 1em;
+}
