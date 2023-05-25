@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ajax-blog.css">
 </head>
 <body>
-<div id="post"></div>
+<div class="container">
+    <h1 class="text-center mb-4">My Blog Site</h1>
+    <div id="post"></div>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -24,12 +29,12 @@
 
             for (let i = 0; i < data.length; i++) {
                 let row = `
-                         <div>
-                        <p>${data[i].title}</p>
-                        <p>${data[i].content}</p>
-                        <p>${data[i].date}</p>
-                        <p>${data[i].categories}</p>
-                        </div>
+                         <div class="post-container">
+                        <h2 class="post-title">${data[i].title}</h2>
+                        <p class="post-content">${data[i].content}</p>
+                        <p class="post-date">Published: ${data[i].date}</p>
+                        <p class="post-categories">Categories: ${data[i].categories}</p>
+                    </div>
                    `;
                 $('#post').append(row);
             }
