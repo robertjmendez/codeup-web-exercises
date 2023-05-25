@@ -11,7 +11,7 @@ $(function (){
     // Exercise 2
     $('#button').click(function() {
         $('ul').each(function() {
-            $(this).find('li').last().css('background-color', '#FF0');
+            $(this).find('li').last().addClass('highlighted');
         });
     });
 
