@@ -30,5 +30,23 @@
     "tool"
   ],
   "price": 10
-}
+},
+  {
+    "title": "Chisel",
+    "quantity": 20,
+    "categories": ["tool"],
+    "price": 12
+  },
+  {
+    "title": "Sander",
+    "quantity": 8,
+    "categories": ["tool", "powered"],
+    "price": 80
+  },
+  {
+    "title": "Garden Hose",
+    "quantity": 15,
+    "categories": ["tool", "outdoor"],
+    "price": 30
+  }
 ]
