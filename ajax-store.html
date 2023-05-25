@@ -19,6 +19,8 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<button id="refresh">Refresh Data</button>
+
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -26,14 +28,24 @@
     (function () {
         "use strict";
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        $.ajax("data/inventory.json").done(function (data, status, jqXhr) {
-            console.log("AJAX call completed successfully!");
-            console.log("Request status: " + status);
-            console.log("Data returned from server:");
-            console.log(data);
 
-            for (let i = 0; i < data.length; i++) {
-                let row = `
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+        function fetchDataAndPopulateTable() {
+            $.ajax("data/inventory.json").done(function (data, status) {
+                console.log("AJAX call completed successfully!");
+                console.log("Request status: " + status);
+                console.log("Data returned from server:");
+                console.log(data);
+
+                $('#insertProducts').empty();
+
+                for (let i = 0; i < data.length; i++) {
+                    let row = `
                          <tr>
                         <td>${data[i].title}</td>
                         <td>${data[i].quantity}</td>
@@ -41,14 +53,16 @@
                         <td>${data[i].categories}</td>
                         </tr>
                    `;
-                $('#insertProducts').append(row);
-            }
-        });
+                    $('#insertProducts').append(row);
+                }
+            });
+        }
 
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
+        fetchDataAndPopulateTable();
+
+        $('#refresh').click(function () {
+            fetchDataAndPopulateTable();
+        });
 
     })();
 </script>
