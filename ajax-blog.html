@@ -6,5 +6,39 @@
 </head>
 <body>
 <div id="post"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    (function () {
+        "use strict";
+
+
+            $.ajax("data/blog.json").done(function (data, status) {
+                console.log("AJAX call completed successfully!");
+                console.log("Request status: " + status);
+                console.log("Data returned from server:");
+                console.log(data);
+
+
+                for (let i = 0; i < data.length; i++) {
+                    let row = `
+                         <div>
+                        <p>${data[i].title}</p>
+                        <p>${data[i].content}</p>
+                        <p>${data[i].date}</p>
+                        <p>${data[i].categories}</p>
+                        </div>
+                   `;
+                    $('#post').append(row);
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.log("AJAX request failed: " + textStatus);
+                console.log("Error: " + errorThrown);
+            });
+
+    })();
+</script>
 </body>
 </html>
