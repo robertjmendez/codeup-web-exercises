@@ -39,13 +39,13 @@
 
 <!-- Mapbox Geocoder Util Methods -->
 <script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
 
 
 <!-- Custom JS -->
 <script>
-    var accessToken = 'pk.eyJ1IjoicmptZW5kZXoiLCJhIjoiY2xpNmxvZmhyMHJlNzNlcGgwMGxveDBxdCJ9.LigbIAjn0YzQUOI7Sbm-Kg';
 
-    mapboxgl.accessToken = accessToken;
+    mapboxgl.accessToken = mapBoxApiKey;
 
     var map = new mapboxgl.Map({
         container: 'map',
@@ -81,7 +81,7 @@
     }
 
     restaurantsInfo.forEach(function (restaurant) {
-        placeMarkerAndPopup(restaurant, accessToken, map);
+        placeMarkerAndPopup(restaurant, mapBoxApiKey, map);
     });
 
     document.getElementById('zoom').addEventListener('change', function () {
@@ -91,7 +91,7 @@
 
     document.getElementById('submit').addEventListener('click', function () {
         var address = document.getElementById('address').value;
-        geocode(address, accessToken).then(function (coordinates) {
+        geocode(address, mapBoxApiKey).then(function (coordinates) {
             map.setCenter(coordinates);
             new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
         });
