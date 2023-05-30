@@ -2,9 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox API</title>
+    <title>First Mapbox Map</title>
+    <!-- Mapbox JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
 </head>
 <body>
+
+<h1>My First Mapbox Map!</h1>
+<div id='controls'>
+    <label for='zoom'>Zoom Level: </label>
+    <select id='zoom'>
+        <option value='5'>5</option>
+        <option value='15' selected>15</option>
+        <option value='20'>20</option>
+    </select>
+    <label for='address'>Enter an address: </label>
+    <input type='text' id='address'/>
+    <button id='submit'>Go</button>
+</div>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+<!-- Custom JS -->
+<script>
+    var accessToken = 'pk.eyJ1IjoicmptZW5kZXoiLCJhIjoiY2xpNmxvZmhyMHJlNzNlcGgwMGxveDBxdCJ9.LigbIAjn0YzQUOI7Sbm-Kg';
+
+    mapboxgl.accessToken = accessToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 11,
+        center: [-97.1467, 31.5493]
+    });
+
+    var restaurantsInfo = [
+        {
+            address: "Maria Mezcaleria, 724 Austin Ave Ste 102 Waco, TX",
+            popupHTML: "<p>Maria Mezcaleria: Best Tacos in Town!</p>"
+        },
+        {
+            address: "Marcos Pizza, 100 B Midway Center Woodway, TX",
+            popupHTML: "<p>Second Favorite Restaurant: Best Pizza!</p>"
+        },
+        {
+            address: "Health Camp, 2601 Circle Rd, Waco, TX",
+            popupHTML: "<p>Third Favorite Restaurant: Best Burgers!</p>"
+        }
+    ];
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function (coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+        });
+    }
+
+    restaurantsInfo.forEach(function (restaurant) {
+        placeMarkerAndPopup(restaurant, accessToken, map);
+    });
+
+    document.getElementById('zoom').addEventListener('change', function () {
+        // Change the map zoom level
+        map.setZoom(parseInt(this.value));
+    });
+
+    document.getElementById('submit').addEventListener('click', function () {
+        var address = document.getElementById('address').value;
+        geocode(address, accessToken).then(function (coordinates) {
+            map.setCenter(coordinates);
+            new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+        });
+    });
+
+</script>
 
 </body>
 </html>

@@ -2,3 +2,4 @@
 *.iml
 .DS_STORE
 confessions.txt
+js/keys.js
