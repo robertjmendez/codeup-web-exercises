@@ -6,7 +6,7 @@ mapboxgl.accessToken = mapBoxApiKey;
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 11, // Set initial zoom level
+    zoom: 11,
     center: [-97.1467, 31.5493]
 });
 
