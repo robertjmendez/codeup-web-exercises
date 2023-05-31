@@ -18,11 +18,11 @@ var restaurantsInfo = [
     },
     {
         address: "Marcos Pizza, 100 B Midway Center Woodway, TX",
-        popupHTML: "<p>Second Favorite Restaurant: Best Pizza!</p>"
+        popupHTML: "<p>Marcos Pizza: Best Pizza!</p>"
     },
     {
         address: "Health Camp, 2601 Circle Rd, Waco, TX",
-        popupHTML: "<p>Third Favorite Restaurant: Best Burgers!</p>"
+        popupHTML: "<p>Health Camp: Best Burgers!</p>"
     }
 ];
 
