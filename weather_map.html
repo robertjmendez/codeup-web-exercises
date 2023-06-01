@@ -22,17 +22,26 @@
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
+<!-- Start of container -->
 <div class="container">
-    <h1 class="text-center pt-2">WeatherWise</h1>
-    <p id="top-location" class="text-center location mx-auto m-0">Chanhed Woodway</p>
+    <!-- Site title -->
+    <h1 class="text-center m-0">WeatherWise</h1>
+    <!-- Location name -->
+    <p id="top-location" class="text-center location mx-auto mb-2"></p>
 
+    <!-- Search bar section -->
     <div class="d-flex justify-content-between mb-3">
         <div class="search-bar col-lg-5 col-md-7 col-xs-12">
+            <!-- Input group for search -->
             <div class="search-input input-group">
-                    <span class="input-group-text bg-transparent border-0"><i
-                            class="fas fa-search text-white"></i></span>
+                <!-- Search icon -->
+                <span class="input-group-text bg-transparent border-0">
+                        <i class="fas fa-search text-white"></i>
+                    </span>
+                <!-- Input field for location search -->
                 <input type="text" class="form-control bg-transparent text-white border-0"
                        placeholder="Search city" id="location-input">
+                <!-- Switch for toggling between modes (presumably dark and light) -->
                 <div class="form-check form-switch align-self-center">
                     <input class="form-check-input" type="checkbox" role="switch" id="mode-toggler">
                     <label class="form-check-label" for="mode-toggler"></label>
@@ -41,14 +50,20 @@
         </div>
     </div>
 
+    <!-- Container for forecast data -->
     <div class="row d-flex justify-content-center" id="forecast-container"></div>
+    <!-- Map container -->
     <div id="map-container" class="mt-2 mb-5 mx-auto"></div>
-
 </div>
+
+<!-- Including jQuery library -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Keys file -->
 <script src="js/keys.js"></script>
+<!-- Custom JS script -->
 <script src="js/weather_map.js"></script>
 
 </body>
+
 </html>
