@@ -2,7 +2,7 @@
     "use strict";
 
     // Weather API configuration
-    const weatherApiUrl = "http://api.openweathermap.org/data/2.5/forecast";
+    const weatherApiUrl = "https://api.openweathermap.org/data/2.5/onecall";
     const weatherApiKey = openWeatherApiKey;
     const weatherUnits = "imperial";
 
@@ -20,7 +20,7 @@
     // Fetch weather forecast
     function fetchWeatherForecast(lat, lon) {
         return $.get(weatherApiUrl, {
-            APPID: weatherApiKey,
+            appid: weatherApiKey,
             lat: lat,
             lon: lon,
             units: weatherUnits
@@ -28,44 +28,34 @@
     }
 
     function updateForecast(data) {
-        let forecastData = data.list;
+        let forecastData = data.daily;
         let htmlResult = '';
-        let previousDate = '';
-        let cardCount = 0;
         const currentDate = new Date().toLocaleDateString(undefined, { weekday: 'long' }); // Get current date
 
-        console.log(forecastData)
+        console.log(forecastData);
+
+        let cardCount = 0; // Counter variable for the number of cards
 
         for (let i = 0; i < forecastData.length; i++) {
-            let date = forecastData[i].dt_txt.split(" ")[0];
-            let dayOfWeek = new Date(forecastData[i].dt_txt).toLocaleDateString(undefined, { weekday: 'long' });
+            let date = new Date(forecastData[i].dt * 1000).toLocaleDateString(undefined, { weekday: 'long' });
+            let dayOfWeek = date === currentDate ? "Today" : date;
 
-            if (date === previousDate) {
-                continue;
-            }
-
-            previousDate = date;
-
-            let currentTemp = forecastData[i].main.temp.toFixed(0);
-            let minTemp = forecastData[i].main.temp_min.toFixed(0);
-            let maxTemp = forecastData[i].main.temp_max.toFixed(0);
+            let currentTemp = forecastData[i].temp.day.toFixed(0);
+            let minTemp = forecastData[i].temp.min.toFixed(0);
+            let maxTemp = forecastData[i].temp.max.toFixed(0);
             let weatherDescription = forecastData[i].weather[0].description;
-            let humidity = forecastData[i].main.humidity;
-            let pressure = forecastData[i].main.pressure;
-            let wind = forecastData[i].wind.speed.toFixed(0);
+            let humidity = forecastData[i].humidity;
+            let pressure = forecastData[i].pressure;
+            let wind = forecastData[i].wind_speed.toFixed(0);
             let iconCode = forecastData[i].weather[0].icon;
             let iconUrl = iconMap[iconCode] || "img/sun.png";
-
-            if (dayOfWeek === currentDate) {
-                dayOfWeek = "Today";
-            }
 
             htmlResult += renderForecastCard(dayOfWeek, iconUrl, currentTemp, maxTemp, minTemp, weatherDescription, humidity, wind, pressure);
 
             cardCount++;
 
             if (cardCount >= 5) {
-                break;
+                break; // Break the loop when 5 cards have been rendered
             }
         }
 
@@ -78,7 +68,7 @@
     <div class="card mb-2 mx-2 col-xs-12">
         <div class="card-header rounded-top d-flex justify-content-center pt-3">${dayOfWeek}</div>
         <div class="image d-flex justify-content-center">
-            <img src="${iconUrl}" alt="Weather Icon" height="110px" width="110px">
+            <img src="${iconUrl}" alt="Weather Icon" height="100px" width="100px">
         </div>
         <div class="card-body text-primary pt-0">
             <h4 class="card-text m-0 text-center mb-2">${currentTemp} °F</h4>
@@ -105,9 +95,11 @@
 
                 const city = cityFeature ? cityFeature.text : '';
 
-                const state = data.features[0].context.find(function(context) {
+                // Check if there is a region context
+                let stateFeature = data.features[0].context ? data.features[0].context.find(function(context) {
                     return context.id.startsWith('region');
-                }).text;
+                }) : undefined;
+                const state = stateFeature ? stateFeature.text : '';
 
                 return {
                     city: city,
@@ -229,4 +221,5 @@
     const initialCoordinates = [-97.2050, 31.5060];
     handleMarkerChange(initialCoordinates);
 })();
+
 
