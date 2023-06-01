@@ -14,7 +14,7 @@
     const forecastContainer = $('#forecast-container');
     const locationInput = $('#location-input');
     const topLocation = $('#top-location');
-    const mapContainer = $('#map-container');
+    $('#map-container');
     let modeToggler = $('#mode-toggler');
 
     // Fetch weather forecast
@@ -78,11 +78,11 @@
     <div class="card mb-2 mx-2 col-xs-12">
         <div class="card-header rounded-top d-flex justify-content-center pt-3">${dayOfWeek}</div>
         <div class="image d-flex justify-content-center">
-            <img src="${iconUrl}" alt="Weather Icon" height="115px" width="115px">
+            <img src="${iconUrl}" alt="Weather Icon" height="110px" width="110px">
         </div>
         <div class="card-body text-primary pt-0">
-            <h4 class="card-text m-0 text-center">${currentTemp} °F</h4>
-            <p class="card-text m-0 text-center mb-2">${weatherDescription}</p>
+            <h4 class="card-text m-0 text-center mb-2">${currentTemp} °F</h4>
+            <p class="card-text m-0 text-center">${weatherDescription}</p>
             <p class="card-title m-0 text-center">H:${maxTemp} L:${minTemp} °F</p>
             <p class="card-text m-0 text-center">Humidity: ${humidity}%</p>
             <p class="card-text m-0 text-center">Wind: ${wind} mph</p>
