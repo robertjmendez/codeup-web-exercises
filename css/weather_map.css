@@ -8,7 +8,7 @@
 :root {
     --body-background-image: linear-gradient(to top, #bdcdd6, #b6cad5, #aec7d4, #a6c5d2, #9ec2d1, #96bece, #8eb9cb, #86b5c8, #7cadc3, #73a6be, #699eb9, #6096b4);
     --header-color: white;
-    --card-background-color: white;
+    --card-background-color: #f0f9fe;
     --card-text-color: black;
     --card-title-color: black;
 }
@@ -32,6 +32,9 @@ h1 {
     background: var(--header-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 2.8rem;
+    padding-top: 5px;
+    padding-bottom: 0;
 }
 
 body {
@@ -121,7 +124,7 @@ p, h3 {
 }
 
 #map-container {
-    height: 315px;
+    height: 300px;
     border-radius: 30px;
 }
 
@@ -131,6 +134,9 @@ p, h3 {
     -webkit-text-fill-color: transparent;
 }
 
+.image {
+    margin: -5px 0;
+}
 
 @media (min-width: 768px) {
     .card {
