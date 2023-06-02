@@ -137,6 +137,10 @@ p, h3 {
     margin: -5px 0;
 }
 
+#top-location {
+    padding-right: 11px;
+}
+
 @media (min-width: 768px) {
     .card {
         width: 30%;
