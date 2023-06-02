@@ -7,8 +7,9 @@
     const weatherUnits = "imperial";
 
     // Mapbox configuration
-    const mapboxAccessToken = mapBoxApiKey;
     const mapboxGeocodingUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/";
+    const mapboxAccessToken = mapBoxApiKey;
+
 
     // DOM elements
     const forecastContainer = $('#forecast-container');
@@ -107,6 +108,8 @@
                 };
             });
     }
+
+
 
     // Initialize Mapbox map
     mapboxgl.accessToken = mapboxAccessToken;
