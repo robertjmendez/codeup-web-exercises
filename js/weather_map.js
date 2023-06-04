@@ -200,7 +200,7 @@
         "04n": "img/cloud.png",
         "09d": "img/rain-shower.png",
         "09n": "img/rain-shower.png",
-        "10d": "img/rain-drizzle.png",
+        "10d": "img/rain-shower.png",
         "10n": "img/rain-shower.png",
         "11d": "img/storm.png",
         "11n": "img/lightning-bolt.png",
