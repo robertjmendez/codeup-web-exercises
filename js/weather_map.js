@@ -10,7 +10,6 @@ $(document).ready(function() {
     const mapboxGeocodingUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/";
     const mapboxAccessToken = MAPBOX_API_KEY;
 
-
     // DOM elements
     const forecastContainer = $('#forecast-container');
     const locationInput = $('#location-input');
@@ -78,7 +77,6 @@ $(document).ready(function() {
         // Set the HTML of the forecast container to the htmlResult string.
         forecastContainer.html(htmlResult);
     }
-
 
     // This function generates the HTML for a weather forecast card.
     function renderForecastCard(dayOfWeek, iconUrl, currentTemp, maxTemp, minTemp, weatherDescription, humidity, wind, pressure) {
@@ -149,7 +147,6 @@ $(document).ready(function() {
             });
     }
 
-
     // Initialize Mapbox map
     mapboxgl.accessToken = mapboxAccessToken;
     const map = new mapboxgl.Map({
@@ -204,7 +201,6 @@ $(document).ready(function() {
         handleMarkerChange([coordinates.lng, coordinates.lat]);
     });
 
-
     // When the enter key is pressed in the input field, this function will be called with the keypress event as an argument.
     locationInput.keypress(function (e) {
         if (e.which == 13) {
@@ -242,7 +238,6 @@ $(document).ready(function() {
         }
     });
 
-
     // Icon map
     let iconMap = {
         "01d": "img/sun.png",
@@ -264,29 +259,20 @@ $(document).ready(function() {
         "50d": "img/fog.png",
         "50n": "img/fog.png"
     };
+        // Event listeners for the toggle
 
-    // Event listener for the mode toggler's click event
-    modeToggler.on('click', function() {
-        let theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', theme);
-    });
+        // Set the default theme to 'dark' on page load
+        $('html').attr('data-theme', 'dark');
 
+        // Event listener for the mode toggler's click event
+        $('#mode-toggler').on('click', function() {
+            let theme = $('html').attr('data-theme') === 'light' ? 'dark' : 'light';
+            $('html').attr('data-theme', theme);
+        });
 
-    // This event listener is triggered when the window loads.
-    $(window).on('load', function() {
-        // Set the default theme to 'dark'.
-        let theme = 'dark';
-        // If the current theme is 'dark', the toggle switch will be checked.
-        document.documentElement.setAttribute('data-theme', theme);
-        modeToggler.prop('checked', theme === 'dark');
-    });
-
-    // This event listener is triggered when the state of the theme toggle switch changes
-    modeToggler.on('change', function() {
-        // If the toggle switch is checked, the new theme is 'dark'. Otherwise, the new theme is 'light'.
-        let newTheme = $(this).prop('checked') ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
-    });
+        // Set the initial state of the mode toggler based on the default theme
+        let initialTheme = $('html').attr('data-theme');
+        $('#mode-toggler').prop('checked', initialTheme === 'dark');
 
     // Initial marker and forecast update
     const initialCoordinates = [-97.2050, 31.5060];
