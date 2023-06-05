@@ -1,4 +1,4 @@
-$(document).ready(function() {
+(function() {
     "use strict";
 
     // Weather API configuration
@@ -279,6 +279,6 @@ $(document).ready(function() {
     // Initial marker and forecast update
     const initialCoordinates = [-97.2050, 31.5060];
     handleMarkerChange(initialCoordinates);
-});
+})();
 
 
