@@ -22,7 +22,6 @@
     --header-color: linear-gradient(to top, #eff5f5, #eaf2f2, #e5efef, #e1ebec, #dce8e9, #dce9e9, #dceae8, #dcebe7, #e2f0e8, #eaf4e8, #f4f8e9, #fffbeb);;
 }
 
-
 h5 {
     color: white;
 }
@@ -147,13 +146,11 @@ p, h3 {
     }
 }
 
-
 @media (min-width: 992px) {
     .card {
         width: 30%;
     }
 }
-
 
 @media (min-width: 1200px) {
     .card {
