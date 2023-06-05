@@ -264,15 +264,17 @@ $(document).ready(function() {
         // Set the default theme to 'dark' on page load
         $('html').attr('data-theme', 'dark');
 
+        // Set the initial state of the mode toggler based on the default theme to make the toggler look on
+        let initialTheme = $('html').attr('data-theme');
+        $('#mode-toggler').prop('checked', initialTheme === 'dark');
+
         // Event listener for the mode toggler's click event
         $('#mode-toggler').on('click', function() {
             let theme = $('html').attr('data-theme') === 'light' ? 'dark' : 'light';
             $('html').attr('data-theme', theme);
         });
 
-        // Set the initial state of the mode toggler based on the default theme
-        let initialTheme = $('html').attr('data-theme');
-        $('#mode-toggler').prop('checked', initialTheme === 'dark');
+
 
     // Initial marker and forecast update
     const initialCoordinates = [-97.2050, 31.5060];
