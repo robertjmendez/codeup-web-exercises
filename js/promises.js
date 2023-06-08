@@ -12,8 +12,8 @@ function getLatestCommitDate() {
             }
         })
             .then(response => response.json())
-            .then(events => {
-                const pushEvent = events.find(event => event.type === 'PushEvent');
+            .then(data => {
+                const pushEvent = data.find(event => event.type === 'PushEvent');
 
                 resolve(pushEvent.created_at);
             })
